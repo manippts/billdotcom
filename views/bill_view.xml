@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	
+    	<record id="view_billdotcom" model="ir.ui.view">
+            <field name="name">Bill.Com</field>
+            <field name="model">bill.com</field>
+            <field name="arch" type="xml">
+                <form string="Bill.Com">
+                	<group>
+                		<label string="Demo Bill.Com integration"/>
+                		<button name="process_bill" type="object" string="Import Bill"/>
+                	</group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_billdotcom" model="ir.actions.act_window">
+            <field name="name">Bill.Com</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bill.com</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <menuitem name="Bill.Com" action="action_billdotcom" id="menu_view_billdotcom" parent="menu_billdotcom_config"/>
+    	
+    </data>
+</openerp>
