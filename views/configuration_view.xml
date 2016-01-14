@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    	
+    	<menuitem name="Bill.Com" id="menu_billdotcom_root"/>
+    	<menuitem name="Configuration" id="menu_billdotcom_config" parent="menu_billdotcom_root"/>
+    	
+    	<record id="view_billdotcom_configuration" model="ir.ui.view">
+            <field name="name">Bill.Com Configuration</field>
+            <field name="model">bill.com.config</field>
+            <field name="arch" type="xml">
+                <form string="Bill.Com Configuration">
+                	<group>
+                		<field name="name"/>
+                		<field name="appkey"/>
+                		<field name="email"/>
+                		<field name="password"/>
+                		<field name="url"/>
+                	</group>
+                	<group>
+                		<field name="org_name"/>
+                		<field name="org_id"/>
+                	</group>
+                	<group>
+                		<field name="is_active"/>
+                	</group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_billdotcom_configuration" model="ir.actions.act_window">
+            <field name="name">Bill.Com Configuration</field>
+            <field name="res_model">bill.com.config</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="action_billdotcom_configuration" id="menu_view_billdotcom_configuration" parent="menu_billdotcom_config"/>
+    	
+    </data>
+</openerp>
